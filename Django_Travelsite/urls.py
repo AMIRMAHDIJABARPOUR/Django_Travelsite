@@ -22,5 +22,5 @@ from Django_Travelsite import settings
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("",include("home_page.urls")),
-    path("blog/",include("blog_page.urls")),
+    path("blog_page/",include("blog_page.urls")),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
