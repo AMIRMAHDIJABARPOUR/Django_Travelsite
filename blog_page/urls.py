@@ -21,4 +21,6 @@ from . import  views
 app_name = 'blog_page'
 urlpatterns = [
     path('blog_home', views.blog_home, name='blog_home'),
+    path('post_single/pid=<slug:pid>',views.single_post, name='single_post'),
+    path ('blog_home/post_filtered',views.post_filtered, name='post_filtered'),
 ]
