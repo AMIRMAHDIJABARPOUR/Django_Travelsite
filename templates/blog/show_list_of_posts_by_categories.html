@@ -1,0 +1,16 @@
+{% load blog_template_tags %}
+<div class="single-sidebar-widget post-category-widget">
+    <h4 class="category-title">Post Catgories</h4>
+    <ul class="cat-list">
+        {% for name, number in category_dict_list_of_tuples.items %}
+        <li>
+
+                <a href="{% url 'blog_page:post_filtered-by-category' category=name %}" class="d-flex justify-content-between">
+                    <p>{{ name }}</p>
+                    <p>{{ number }}</p>
+                </a>
+
+        </li>
+        {% endfor %}
+    </ul>
+</div>

@@ -33,7 +33,7 @@
             <a class="posts-title" href="{% url 'blog_page:single_post' pid=post.id %}">
                 <h3>{{ post.title|truncatewords:25 }}</h3></a>
             <p class="excert">{{ post.content|truncatewords:48 }}</p>
-            <a href="blog-single.html" class="primary-btn">View More</a>
+            <a href="{% url 'blog_page:single_post' pid=post.id %}" class="primary-btn">View More</a>
         </div>
     </div>
 {% endfor %}
