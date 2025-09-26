@@ -25,4 +25,5 @@ urlpatterns = [
     path("about/",views.about_page,name="about_page"),
     path("elements/",views.elements,name="elements"),
     path('contact/',views.contact,name="contact"),
+    path('newsletter/',views.newsletter,name="newsletter"),
 ]

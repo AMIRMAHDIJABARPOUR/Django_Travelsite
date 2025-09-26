@@ -1,9 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.fields import CharField, EmailField, TextField
+
+
 # Create your models here.
-# class Author(models.Model):
-#     name = models.CharField(max_length=128)
-#     email = models.EmailField(null=True,blank=True)
+
+
 class Category(models.Model):
     name = models.CharField(max_length= 128 , unique= True)
     def __str__(self):
@@ -22,4 +24,5 @@ class Post(models.Model):
     updated_date = models.DateTimeField(auto_now = True)
     def __str__(self):
         return self.title
+
 

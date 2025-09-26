@@ -1,4 +1,5 @@
 {% load static %}
+{% load humanize %}
 <div class="single-sidebar-widget popular-post-widget">
     <h4 class="popular-title">Popular Posts</h4>
     <div class="popular-post-list">
@@ -20,7 +21,7 @@
                 </div>
                 <div class="details">
                     <a href="{% url 'blog_page:single_post' pid=post.id %}"><h6>{{ post.title }}</h6></a>
-                    <p>{{post.updated_date|date:'Y-m-d'}}</p>
+                    <p>{{post.updated_date|naturalday}}</p>
                 </div>
             </div>
         {% endfor %}

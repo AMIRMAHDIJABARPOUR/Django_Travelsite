@@ -1,0 +1,96 @@
+/* کانتینر اصلی Toast ها */
+#contact-msg-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 99999;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    pointer-events: none;
+}
+
+/* استایل کلی Toast */
+.contact-toast {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 260px;
+    max-width: 360px;
+    padding: 14px 18px;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transform: translateX(100%);
+    animation: contactToastIn 0.5s forwards;
+    position: relative;
+    overflow: hidden;
+    pointer-events: auto;
+}
+
+/* آیکون */
+.contact-toast-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+/* متن */
+.contact-toast-text {
+    flex-grow: 1;
+}
+
+/* Progress bar */
+.contact-toast-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.7);
+    animation: contactProgress linear forwards;
+}
+
+/* رنگ‌ها */
+.contact-toast-success {
+    background: linear-gradient(135deg, #28a745, #1e7e34);
+}
+
+.contact-toast-error {
+    background: linear-gradient(135deg, #dc3545, #a71d2a);
+}
+
+.contact-toast-warning {
+    background: linear-gradient(135deg, #ffc107, #e0a800);
+    color: #222;
+}
+
+.contact-toast-info {
+    background: linear-gradient(135deg, #17a2b8, #0d6674);
+}
+
+/* انیمیشن ورود و خروج */
+@keyframes contactToastIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes contactToastOut {
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+/* انیمیشن Progress bar */
+@keyframes contactProgress {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0%;
+    }
+}

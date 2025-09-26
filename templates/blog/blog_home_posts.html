@@ -1,5 +1,6 @@
 {% load static %}
-{% for post in posts %}
+{% load humanize %}
+{% for post in page_obj %}
     <div class="single-post row">
         <div class="col-lg-3 col-md-3 meta-details">
             <ul class="tags" style="list-style: none; padding: 0; max-width: 160px;">
@@ -14,10 +15,10 @@
                     <a href="#">{{ post.author }}</a> <span class="lnr lnr-user"></span>
                 </p>
                 <p class="date col-lg-12 col-md-12 col-6">
-                    <a href="#">{{ post.updated_date| date:"Y-m-d" }}</a> <span class="lnr lnr-calendar-full"></span>
+                    <a href="#">{{ post.updated_date|naturalday }}</a> <span class="lnr lnr-calendar-full"></span>
                 </p>
                 <p class="view col-lg-12 col-md-12 col-6">
-                    <a href="#">{{ post.counted_views }}</a> <span class="lnr lnr-eye"></span>
+                    <a href="#">{{ post.counted_views|intcomma }}</a> <span class="lnr lnr-eye"></span>
                 </p>
                 <p class="comments col-lg-12 col-md-12 col-6">
                     <a href="#">06 Comments</a> <span class="lnr lnr-bubble"></span>

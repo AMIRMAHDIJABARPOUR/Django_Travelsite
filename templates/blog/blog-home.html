@@ -85,45 +85,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 posts-list">
-                    {% include 'blog/single_posts_blog_home.html' %}
+                    {% include 'blog/blog_home_posts.html' %}
 
-                    <nav class="blog-pagination justify-content-center d-flex">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a href="#" class="page-link" aria-label="Previous"><span aria-hidden="true"><span
-                                        class="lnr lnr-chevron-left"></span></span></a>
-                            </li>
-                            <li class="page-item">
-                                <a href="#" class="page-link">01</a>
-                            </li>
-                            <li class="page-item active">
-                                <a href="#" class="page-link">02</a>
-                            </li>
-                            <li class="page-item">
-                                <a href="#" class="page-link">03</a>
-                            </li>
-                            <li class="page-item">
-                                <a href="#" class="page-link">04</a>
-                            </li>
-                            <li class="page-item">
-                                <a href="#" class="page-link">09</a>
-                            </li>
-                            <li class="page-item">
-                                <a href="#" class="page-link" aria-label="Next"><span aria-hidden="true"><span
-                                        class="lnr lnr-chevron-right"></span></span></a>
-                            </li>
-                        </ul>
-                    </nav>
+                    {% include 'blog/paginator_nav.html' %}
                 </div>
                 <div class="col-lg-4 sidebar-widgets">
                     <div class="widget-wrap">
-                        <div class="single-sidebar-widget search-widget">
-                            <form class="search-form" action="#">
-                                <input placeholder="Search Posts" name="search" type="text"
-                                       onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Posts'"/>
-                                <button type="submit"><i class="fa fa-search"></i></button>
-                            </form>
-                        </div>
+                        {% include 'blog/blog_search.html' %}
                         <div class="single-sidebar-widget user-info-widget">
                             <img src="{% static 'img/blog/user-info.png' %}" alt=""/>
                             <a href="#"><h4>Charlie Barber</h4></a>
@@ -155,23 +123,10 @@
                             <h4 class="newsletter-title">Newsletter</h4>
                             <p>Here, I focus on a range of items and features that we use in life without giving them a
                                 second thought.</p>
-                            <div class="form-group d-flex flex-row">
-                                <div class="col-autos">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text">
-                                                <i class="fa fa-envelope" aria-hidden="true"></i>
-                                            </div>
-                                        </div>
-                                        <input type="text" class="form-control" id="inlineFormInputGroup"
-                                               placeholder="Enter email" onfocus="this.placeholder = ''"
-                                               onblur="this.placeholder = 'Enter email'"/>
-                                    </div>
-                                </div>
-                                <a href="#" class="bbtns">Subcribe</a>
-                            </div>
+                            {% include 'blog/newsletter_form.html' %}
                             <p class="text-bottom">You can unsubscribe at any time</p>
                         </div>
+
                         <div class="single-sidebar-widget tag-cloud-widget">
                             <h4 class="tagcloud-title">Tag Clouds</h4>
                             <ul>

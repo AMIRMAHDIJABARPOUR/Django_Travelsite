@@ -1,0 +1,19 @@
+<form action="{% url 'home_page:newsletter' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group d-flex flex-row">
+        <div class="col-autos">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <input type="hidden" name="next" value="{{ request.path }}">
+                <input type="email" name="email" class="form-control" id="inlineFormInputGroup"
+                       placeholder="Enter email" onfocus="this.placeholder = ''"
+                       onblur="this.placeholder = 'Enter email'" required/>
+            </div>
+        </div>
+        <button type="submit" class="bbtns">Subcribe</button>
+    </div>
+</form>

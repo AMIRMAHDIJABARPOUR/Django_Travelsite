@@ -228,14 +228,7 @@
                 </div>
                 <div class="col-lg-4 sidebar-widgets">
                     <div class="widget-wrap">
-                        <div class="single-sidebar-widget search-widget">
-                            <form class="search-form" action="#">
-                                <input placeholder="Search Posts" name="search" type="text"
-                                       onfocus="this.placeholder = ''"
-                                       onblur="this.placeholder = 'Search Posts'">
-                                <button type="submit"><i class="fa fa-search"></i></button>
-                            </form>
-                        </div>
+                        {% include 'blog/blog_search.html' %}
                         <div class="single-sidebar-widget user-info-widget">
                             <img src="{% static 'img/blog/user-info.png' %}" alt="">
                             <a href="#"><h4>Charlie Barber</h4></a>
@@ -265,21 +258,9 @@
                                 Here, I focus on a range of items and features that we use in life without
                                 giving them a second thought.
                             </p>
-                            <div class="form-group d-flex flex-row">
-                                <div class="col-autos">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text"><i class="fa fa-envelope"
-aria-hidden="true"></i>
-                                            </div>
-                                        </div>
-                                        <input type="text" class="form-control" id="inlineFormInputGroup"
-                                               placeholder="Enter email" onfocus="this.placeholder = ''"
-                                               onblur="this.placeholder = 'Enter email'">
-                                    </div>
+                                <div class="form-group d-flex flex-row">
+                                    {% include 'blog/newsletter_form.html' %}
                                 </div>
-                                <a href="#" class="bbtns">Subcribe</a>
-                            </div>
                             <p class="text-bottom">
                                 You can unsubscribe at any time
                             </p>

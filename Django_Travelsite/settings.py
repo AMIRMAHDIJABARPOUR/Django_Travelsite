@@ -22,6 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+SITE_ID = 1
 SECRET_KEY = "django-insecure-i!j_u$cpfu(-rqfo%j$@b=8l+vm+pg5-ny(!%^950nle@upo9#"
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -36,9 +37,11 @@ INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
-    "django.contrib.sessions",
     "django.contrib.messages",
+    'django.contrib.sessions',
+    "django_extensions",
     "django.contrib.staticfiles",
+    "django.contrib.humanize",
     'home_page.apps.HomePageConfig',
     'blog_page.apps.BlogPageConfig',
 ]
@@ -51,6 +54,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "django.contrib.messages.middleware.MessageMiddleware",
+    "django.contrib.sessions.middleware.SessionMiddleware",
 ]
 
 ROOT_URLCONF = "Django_Travelsite.urls"
