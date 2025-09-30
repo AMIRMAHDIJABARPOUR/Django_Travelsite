@@ -1,5 +1,6 @@
+from captcha.fields import CaptchaField
 from django.db import models
-
+from django.urls import reverse
 # Create your models here.
 class Contact(models.Model):
     name = models.CharField(max_length=128)
@@ -7,6 +8,7 @@ class Contact(models.Model):
     email = models.EmailField()
     massage = models.TextField()
     created_date = models.DateTimeField(auto_now_add=True)
+    captcha = CaptchaField()
 class Newsletter(models.Model):
     email = models.EmailField()
     joined_date = models.DateTimeField(auto_now_add=True)

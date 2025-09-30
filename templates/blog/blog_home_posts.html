@@ -12,7 +12,7 @@
             </ul>
             <div class="user-details row">
                 <p class="user-name col-lg-12 col-md-12 col-6">
-                    <a href="#">{{ post.author }}</a> <span class="lnr lnr-user"></span>
+                    <a href="{% url 'blog_page:post_filtered-by-author' author=post.author %}">{{ post.author }}</a> <span class="lnr lnr-user"></span>
                 </p>
                 <p class="date col-lg-12 col-md-12 col-6">
                     <a href="#">{{ post.updated_date|naturalday }}</a> <span class="lnr lnr-calendar-full"></span>

@@ -21,8 +21,9 @@ from . import  views
 app_name = 'blog_page'
 urlpatterns = [
     path('blog_home', views.blog_home, name='blog_home'),
-    path('post_single/pid=<slug:pid>',views.single_post, name='single_post'),
-    path('post_single/category=<slug:category>',views.blog_home, name='post_filtered-by-category'),
-    path('post_single/author=<slug:author>',views.blog_home, name='post_filtered-by-author'),
+    path('blog_home/category=<slug:category>',views.blog_home, name='post_filtered-by-category'),
+    path('blog_home/author=<slug:author>',views.blog_home, name='post_filtered-by-author'),
+    path('blog_home/tag=<slug:tag>',views.blog_home, name='post_filtered-by-tag'),
+    path('blog_single/pid=<int:pid>', views.single_post, name='single_post'),
     path('blog_search/', views.blog_home, name='blog_search'),
 ]

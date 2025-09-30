@@ -1,0 +1,10 @@
+<div class="single-sidebar-widget tag-cloud-widget">
+    <h4 class="tagcloud-title">Tag Clouds</h4>
+    <ul>
+        {% for tag in tags %}
+            <li>
+                <a href="{% url 'blog_page:post_filtered-by-tag' tag=tag.name %}">{{ tag.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
