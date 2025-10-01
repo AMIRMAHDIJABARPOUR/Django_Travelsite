@@ -1,8 +1,9 @@
 from captcha.fields import CaptchaField
 from django import forms
-from ..home_page.models import Contact
+from .models import Comment
 
-# class ContactModelForm(forms.ModelForm):
-#     model = Contact
-#     # captcha = CaptchaField()
-#     exclude = ('created_date',)
+class CommentModelForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        exclude = ('approved_by ','create_date ')
+        fields =['name','email','subject','massage']

@@ -91,6 +91,14 @@
         width: 100%;
     }
     to {
-        width: 0%;
+        width: 0 ;
     }
+}
+
+.comments-area .comment-list .single-comment .user .desc p.comment,
+.comments-area .comment-list .single-comment .user .desc h5 a {
+    display: inline-block !important;
+    max-width: 75ch !important;
+    white-space: normal !important;
+    word-break: break-word !important; /* break-word کافیست */
 }

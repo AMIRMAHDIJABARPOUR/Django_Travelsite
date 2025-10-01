@@ -1,10 +1,11 @@
-from django.shortcuts import render , get_object_or_404
+from .models import Post, Category,Comment
+from .forms import CommentModelForm
+from django.shortcuts import render , get_object_or_404 , redirect
 from django.http import HttpResponse
-from .models import Post, Category
 from django.db.models import Q
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from taggit.models import Tag
-
+from django.contrib import messages
 
 def blog_home(request,category=None,author=None,tag=None):
 ##################################################filter posts#########################################################
@@ -48,8 +49,16 @@ def single_post(request,pid):
     post = get_object_or_404(Post,pk=pid)
     posts = Post.objects.all().order_by('-updated_date')
     all_tags = Tag.objects.all()
-
-    context = {'post': post , 'posts': posts , 'tags': all_tags}
+    comments = Comment.objects.filter(post_id=pid, approved=True).order_by('-create_date')
+    if request.method == 'POST':
+        comment_form = CommentModelForm(request.POST)
+        if comment_form.is_valid():
+            comment=comment_form.save(commit=False)
+            comment.post=post
+            comment.save()
+            messages.success(request, 'Your comment has been submitted')
+            return redirect('blog_page:single_post', pid=post.id)
+    context = {'post': post , 'posts': posts , 'tags': all_tags,'comments': comments}
 
     return render(request , 'blog/blog-single.html', context)
 

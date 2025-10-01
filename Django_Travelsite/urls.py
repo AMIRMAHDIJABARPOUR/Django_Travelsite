@@ -39,10 +39,9 @@ sitemaps = {
 
 urlpatterns = [
     path('rss/', LatestPostsFeed(), name='post_feed' ),
-    path('captcha/',include('captcha.urls')),
+    path('captcha/', include('captcha.urls')),
     path('robots.txt',include('robots.urls')),
     path('sitemap.xml',views.sitemap_restricted,name='sitemap'),
-    path('captcha/', include('captcha.urls')),
     path("admin/", admin.site.urls),
     path("",include("home_page.urls")),
     path("blog_page/",include("blog_page.urls")),

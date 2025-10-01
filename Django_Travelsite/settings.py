@@ -14,6 +14,7 @@ from email.policy import default
 from pathlib import Path
 
 from django.conf.global_settings import STATIC_ROOT
+from multi_captcha_admin import MULTI_CAPTCHA_ADMIN, engine
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,6 +34,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'multi_captcha_admin',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -152,7 +154,9 @@ mimetypes.add_type("application/javascript", ".js", True)
 X_FRAME_OPTIONS='SAMEORIGIN'
 
 
-RECAPTCHA_PUBLIC_KEY = "6LfTstkrAAAAAL_kHhzt_g2tkfFGmDLDjCthIMZM"
-RECAPTCHA_PRIVATE_KEY = "6LfTstkrAAAAAOqoq02KGo_UySWxmud9y4NTmC2N"
+# RECAPTCHA_PUBLIC_KEY = "6LfTstkrAAAAAL_kHhzt_g2tkfFGmDLDjCthIMZM"
+# RECAPTCHA_PRIVATE_KEY = "6LfTstkrAAAAAOqoq02KGo_UySWxmud9y4NTmC2N"
 SILENCED_SYSTEM_CHECKS = ["captcha.recaptcha_test_key_error"]
-
+MULTI_CAPTCHA_ADMIN={
+    'engine':'simple-captcha',
+}

@@ -7,3 +7,5 @@ django-debug-toolbar
 django-taggit
 django-ckeditor
 django-summernote
+django-simple-captcha
+django-multi-captcha-admin

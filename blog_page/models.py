@@ -30,4 +30,17 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('blog_page:single_post',kwargs={'pid':self.id})
 
+class Comment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE , default=1)
+    name =models.CharField(max_length= 128)
+    email =models.EmailField()
+    subject =models.CharField(max_length= 256)
+    massage = models.TextField(default="")
+    create_date =models.DateTimeField(auto_now_add = True)
+    approved = models.BooleanField(default=False)
+    def __str__(self):
+        return self.subject
+
+    def get_absolute_url(self):
+        return reverse('blog_page:single_post', kwargs={'pid': self.post.id})
 
