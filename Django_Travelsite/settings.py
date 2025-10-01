@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
+
 import mimetypes
 from email.policy import default
 from pathlib import Path
@@ -34,28 +35,28 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'multi_captcha_admin',
+    "multi_captcha_admin",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.messages",
-    'django.contrib.sessions',
+    "django.contrib.sessions",
     "django.contrib.staticfiles",
     "django.contrib.humanize",
     "django.contrib.sites",
     "django.contrib.sitemaps",
     "django_extensions",
-    'robots',
-    'captcha',
-    'taggit',
-    'django_summernote',
+    "robots",
+    "captcha",
+    "taggit",
+    "django_summernote",
     "debug_toolbar",
-    'home_page.apps.HomePageConfig',
-    'blog_page.apps.BlogPageConfig',
+    "home_page.apps.HomePageConfig",
+    "blog_page.apps.BlogPageConfig",
 ]
 
 MIDDLEWARE = [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -72,7 +73,7 @@ ROOT_URLCONF = "Django_Travelsite.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / 'templates'],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -130,10 +131,10 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-MEDIA_ROOT = BASE_DIR / 'media'
+STATIC_ROOT = BASE_DIR / "staticfiles"
+MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_URL = "/media/"
-CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -144,19 +145,19 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 ROBOTS_USE_HOST = False  # prevent adding Host line to robots.txt
 ROBOTS_USE_SITEMAP = True  # automatically include Sitemap link
 INTERNAL_IPS = [
-    '127.0.0.1',
+    "127.0.0.1",
 ]
 DEBUG_TOOLBAR_CONFIG = {
-    'SHOW_TOOLBAR_CALLBACK': lambda request: True,
+    "SHOW_TOOLBAR_CALLBACK": lambda request: True,
 }
 mimetypes.add_type("application/javascript", ".js", True)
 
-X_FRAME_OPTIONS='SAMEORIGIN'
+X_FRAME_OPTIONS = "SAMEORIGIN"
 
 
 # RECAPTCHA_PUBLIC_KEY = "6LfTstkrAAAAAL_kHhzt_g2tkfFGmDLDjCthIMZM"
 # RECAPTCHA_PRIVATE_KEY = "6LfTstkrAAAAAOqoq02KGo_UySWxmud9y4NTmC2N"
 SILENCED_SYSTEM_CHECKS = ["captcha.recaptcha_test_key_error"]
-MULTI_CAPTCHA_ADMIN={
-    'engine':'simple-captcha',
+MULTI_CAPTCHA_ADMIN = {
+    "engine": "simple-captcha",
 }
