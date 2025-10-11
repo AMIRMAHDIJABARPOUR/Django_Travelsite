@@ -1,0 +1,1 @@
+from .dev import *  # برای توسعه، dev.py رو لود کن

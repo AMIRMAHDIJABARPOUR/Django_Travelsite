@@ -43,8 +43,13 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-sm-6 col-6 header-top-left">
                     <ul>
-                        <li><a href="#">Visit Us</a></li>
-                        <li><a href="#">Buy Tickets</a></li>
+                        {% if user.is_authenticated %}
+                            <li><a href="#">welcome to our blog  {{ user.username }}</a></li>
+                            <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
+                        {% else %}
+                            <li><a href="{% url 'accounts:login' %}">login</a></li>
+                            <li><a href="{% url 'accounts:signup' %}">sign up</a></li>
+                        {% endif %}
                     </ul>
                 </div>
                 <div class="col-lg-6 col-sm-6 col-6 header-top-right">
@@ -143,27 +148,7 @@
 
                         </form>
 
-                        {% if messages %}
-                            <div id="contact-msg-container">
-                                {% for message in messages %}
-                                    <div class="contact-toast contact-toast-{{ message.tags }}">
-                                        <div class="contact-toast-icon">
-                                            {% if message.tags == "success" %}
-                                                ✅
-                                            {% elif message.tags == "error" %}
-                                                ❌
-                                            {% elif message.tags == "warning" %}
-                                                ⚠️
-                                            {% else %}
-                                                ℹ️
-                                            {% endif %}
-                                        </div>
-                                        <div class="contact-toast-text">{{ message }}</div>
-                                        <div class="contact-toast-progress"></div>
-                                    </div>
-                                {% endfor %}
-                            </div>
-                        {% endif %}
+                        {% include 'massage.html' %}
 
                     </div>
                 </div>

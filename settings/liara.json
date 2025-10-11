@@ -1,0 +1,14 @@
+{
+  "platform": "django",
+  "appType": "django",
+  "buildCommand": "pip install -r requirements.txt",
+  "runCommand": "gunicorn Django_Travelsite.wsgi:application --bind 0.0.0.0:8000 --workers=3",
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "Django_Travelsite.settings.prod",
+    "DEBUG": "False"
+  },
+  "disk": {
+    "mountPath": "/app/media",
+    "size": 10
+  }
+}

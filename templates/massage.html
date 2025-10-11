@@ -1,0 +1,25 @@
+{% load static %}
+{% if messages %}
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <script src="{% static 'js/login.js' %}"></script>
+
+    <div id="xai-message-container-unique-20251004">
+        {% for message in messages %}
+            <div class="xai-message-toast xai-message-toast-{{ message.tags }}" data-message="{{ message }}">
+                <div class="xai-message-toast-icon">
+                    {% if message.tags == "success" %}
+                        ✅
+                    {% elif message.tags == "error" %}
+                        ❌
+                    {% elif message.tags == "warning" %}
+                        ⚠️
+                    {% else %}
+                        ℹ️
+                    {% endif %}
+                </div>
+                <div class="xai-message-toast-text">{{ message }}</div>
+                <div class="xai-message-toast-progress"></div>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
