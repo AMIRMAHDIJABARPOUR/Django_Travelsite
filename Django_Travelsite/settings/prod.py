@@ -4,7 +4,7 @@ from decouple import config
 # تنظیمات امنیتی برای تولید
 DEBUG = config('DEBUG', default=False, cast=bool)
 SECRET_KEY = config('SECRET_KEY')
-ALLOWED_HOSTS = ['*']  # بعداً به ['yourdomain.com', 'www.yourdomain.com'] تغییر دهید
+ALLOWED_HOSTS = ['travelsite.liara.run', 'www.travelsite.liara.run']  # بعداً به ['yourdomain.com', 'www.yourdomain.com'] تغییر دهید
 
 # دیتابیس تولید (PostgreSQL)
 DATABASES = {
@@ -19,12 +19,12 @@ DATABASES = {
 }
 
 # تنظیمات فایل‌های استاتیک و مدیا برای لیارا
-STATIC_URL = '/static/'
-STATIC_ROOT = '/app/static/'
 STATICFILES_DIRS = []
-MEDIA_URL = '/media/'
-MEDIA_ROOT = '/app/media/'
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static'
 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 # تنظیمات امنیتی HTTPS
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True

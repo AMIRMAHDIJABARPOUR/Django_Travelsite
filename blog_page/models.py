@@ -29,7 +29,7 @@ class Post(models.Model):
         default="blog_page_home/default.png",
     )
     title = models.CharField(max_length=128)
-    content = SummernoteTextField()
+    content = TextField()
     category = models.ManyToManyField(Category)
     tags = TaggableManager(blank=True)
     status = models.BooleanField(default=False)

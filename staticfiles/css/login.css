@@ -1,0 +1,295 @@
+#xai-message-container-unique-20251004 {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.xai-message-toast {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding: 12px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    width: 300px;
+    animation: xai-fadeIn 0.3s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.xai-message-toast-success {
+    background: rgba(46, 204, 113, 0.2);
+}
+
+.xai-message-toast-error {
+    background: rgba(231, 76, 60, 0.2);
+}
+
+.xai-message-toast-warning {
+    background: rgba(241, 196, 15, 0.2);
+}
+
+.xai-message-toast-info {
+    background: rgba(52, 152, 219, 0.2);
+}
+
+.xai-message-toast-icon {
+    font-size: 20px;
+    margin-right: 12px;
+}
+
+.xai-message-toast-text {
+    flex: 1;
+    font-size: 14px;
+}
+
+.xai-message-toast-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: #fff;
+    animation: xai-progress 5s linear forwards;
+}
+
+@keyframes xai-fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes xai-progress {
+    from { width: 100%; }
+    to { width: 0; }
+}
+
+.xai-message-toast.fade-out {
+    animation: xai-fadeOut 0.3s ease-out forwards;
+}
+
+@keyframes xai-fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; height: 0; padding: 0; margin: 0; }
+}
+
+/*#################################################################################################################*/
+/* کانتینر فرم لاگین */
+.login-container {
+    width: 100%;
+    max-width: 400px; /* کمی بزرگ‌تر برای زیبایی */
+    padding: 20px;
+    margin: 0 auto; /* برای مرکزیت بدون وابستگی به body */
+}
+
+/* کارت فرم */
+.login-card {
+    background: rgba(37, 43, 58, 0.9); /* افکت شیشه‌ای */
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    animation: cardFadeIn 0.5s ease-out;
+}
+
+/* انیمیشن ورود کارت */
+@keyframes cardFadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* عنوان */
+.login-card h2 {
+    font-weight: 600;
+    font-size: 32px; /* بزرگ‌تر و جذاب‌تر */
+    margin-bottom: 15px;
+    color: #4e9cff;
+}
+
+/* زیرعنوان */
+.subtitle {
+    font-size: 15px;
+    color: #b0b0b0;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* گروه ورودی‌ها */
+.form-group {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.form-group input {
+    width: 100%;
+    max-width: 300px;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(46, 52, 69, 0.8);
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.form-group input::placeholder {
+    color: #a0a0a0;
+    opacity: 1;
+    font-style: italic;
+}
+
+.form-group input:focus {
+    outline: none;
+    background: rgba(46, 52, 69, 0.95);
+    box-shadow: 0 0 12px rgba(78, 156, 255, 0.7);
+    transform: translateY(-2px);
+}
+
+/* دکمه ورود */
+.btn {
+    width: 100%;
+    max-width: 320px;
+    padding: 15px;
+    background: linear-gradient(90deg, #4e9cff, #6c63ff);
+    border: none;
+    border-radius: 12px;
+    font-size: 17px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    margin: 0 auto;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(108, 99, 255, 0.8);
+}
+
+/* لینک ثبت‌نام */
+.register-link {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #a0a0a0;
+    text-align: center;
+}
+
+.register-link a {
+    color: #4e9cff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+    color: #6c63ff;
+}
+
+/* استایل‌های پیام‌ها (جداگانه و بدون تداخل) */
+#message-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message-toast {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+    padding: 12px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    width: 300px;
+    animation: fadeIn 0.3s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.message-toast.success {
+    background: rgba(46, 204, 113, 0.2);
+}
+
+.message-toast.error {
+    background: rgba(231, 76, 60, 0.2);
+}
+
+.message-toast.warning {
+    background: rgba(241, 196, 15, 0.2);
+}
+
+.message-toast.info {
+    background: rgba(52, 152, 219, 0.2);
+}
+
+.message-toast-icon {
+    font-size: 20px;
+    margin-right: 12px;
+}
+
+.message-toast-text {
+    flex: 1;
+    font-size: 14px;
+}
+
+.message-toast-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: #fff;
+    animation: progress 5s linear forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes progress {
+    from { width: 100%; }
+    to { width: 0; }
+}
+
+.message-toast.fade-out {
+    animation: fadeOut 0.3s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; height: 0; padding: 0; margin: 0; }
+}

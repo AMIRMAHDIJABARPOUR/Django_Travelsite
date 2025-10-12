@@ -6,8 +6,8 @@ from django.urls import reverse
 
 # Register your models here.
 @admin.register(Post)
-class PostAdmin(SummernoteModelAdmin):
-    summernote_fields = ("content",)
+class PostAdmin(admin.ModelAdmin):
+
     list_display = ("title", "author", "created_date", "status")
     list_filter = ("status", "created_date", "category")
     field = ("author", "title", "status", "content", "category", "published_date")
