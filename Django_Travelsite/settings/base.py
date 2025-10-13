@@ -23,7 +23,6 @@ INSTALLED_APPS = [
     "robots",
     "captcha",
     "taggit",
-    "django_summernote",
     "home_page.apps.HomePageConfig",
     "blog_page.apps.BlogPageConfig",
 ]
@@ -75,8 +74,6 @@ MEDIA_URL = "/media/"
 ROBOTS_USE_HOST = False
 ROBOTS_USE_SITEMAP = True
 
-# تنظیمات Summernote (برای ویرایشگر متن)
-CKEDITOR_UPLOAD_PATH = "Uploads/"
 
 # تنظیمات چندزبانه
 LANGUAGE_CODE = "en-us"
