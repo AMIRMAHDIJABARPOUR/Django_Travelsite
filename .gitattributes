@@ -1,2 +1,9 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+venv/
+__pycache__/
+*.pyc
+.env
+db.sqlite3
+.git/
+media/*  # فایل‌های مدیا بزرگ
