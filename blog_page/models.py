@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from django.db.models.fields import CharField, EmailField, TextField
 from taggit.managers import TaggableManager
 from django.urls import reverse
-from django_summernote.fields import SummernoteTextField
 
 # Create your models here.
 
