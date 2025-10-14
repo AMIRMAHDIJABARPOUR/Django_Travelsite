@@ -19,16 +19,17 @@ DATABASES = {
 }
 
 # تنظیمات فایل‌های استاتیک و مدیا برای لیارا
-STATICFILES_DIRS = []
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = '/app/static/'
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = '/app/media/'
+STATICFILES_DIRS = []
+
 # تنظیمات امنیتی HTTPS
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
+# SECURE_SSL_REDIRECT = True
 SECURE_HSTS_SECONDS = 31536000
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True

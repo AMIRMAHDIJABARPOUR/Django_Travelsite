@@ -11,3 +11,4 @@ django-multi-captcha-admin
 psycopg2-binary
 python-decouple
 gunicorn
+dj-database-url
