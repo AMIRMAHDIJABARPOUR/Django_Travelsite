@@ -23,7 +23,7 @@ class CommentAdmin(admin.ModelAdmin):
     list_display = ("post", "name", "subject", "create_date", "approved")
     list_filter = ("create_date", "approved")
     search_fields = ("name", "email", "subject", "massage")
-
+    # exclude = ('slug',)
     def view_on_site(self, obj=None):
         return obj.get_absolute_url()
 

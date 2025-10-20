@@ -49,3 +49,5 @@ MULTI_CAPTCHA_ADMIN = {
     "engine": "simple-captcha",
 }
 SILENCED_SYSTEM_CHECKS = ["captcha.recaptcha_test_key_error"]
+
+#new

@@ -20,3 +20,5 @@ def show_list_of_posts_by_categories():
     category_dict_list_of_tuples = OrderedDict(sorted_items[0:5])
 
     return {"category_dict_list_of_tuples": category_dict_list_of_tuples}
+
+
