@@ -7,19 +7,22 @@ from django.urls import reverse
 from django.utils.text import slugify
 from taggit.models import Tag
 
-
 # Create your models here.
 
 
 class Category(models.Model):
-    name = models.SlugField(unique=True, )
+    name = models.SlugField(
+        unique=True,
+    )
 
     def __str__(self):
         return self.name
 
     def save(self, *args, **kwargs):
         if not self.name or not self.name.strip():
-            raise ValueError("اسم دسته‌بندی نمی‌تونه خالی باشه یا فقط فاصله داشته باشه.")
+            raise ValueError(
+                "اسم دسته‌بندی نمی‌تونه خالی باشه یا فقط فاصله داشته باشه."
+            )
         self.name = slugify(self.name)
         super().save(*args, **kwargs)
 
@@ -46,15 +49,13 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-
     def clean_tags(self):
         current_tags = list(self.tags.names())
-        self.tags.clear() 
+        self.tags.clear()
         for name in current_tags:
             clean = slugify(name.strip())
             if clean:
                 self.tags.add(clean)
-
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -65,7 +66,7 @@ class Post(models.Model):
                 slug = f"{base_slug}-{counter}"
                 counter += 1
             self.slug = slug
-
+        super().save(*args, **kwargs)
 
         self.clean_tags()
 
@@ -93,5 +94,3 @@ class Comment(models.Model):
             raise ValidationError("اسم نباید خالی باشه.")
         if not self.subject.strip():
             raise ValidationError("موضوع نباید خالی باشه.")
-
-

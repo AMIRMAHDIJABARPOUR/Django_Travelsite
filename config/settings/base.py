@@ -39,7 +39,7 @@ MIDDLEWARE = [
 ]
 
 # تنظیمات URL
-ROOT_URLCONF = "Django_Travelsite.urls"
+ROOT_URLCONF = "config.urls"
 
 # تنظیمات قالب‌ها
 TEMPLATES = [
@@ -58,7 +58,7 @@ TEMPLATES = [
 ]
 
 # تنظیمات WSGI
-WSGI_APPLICATION = "Django_Travelsite.wsgi.application"
+WSGI_APPLICATION = "config.wsgi.application"
 
 # تنظیمات پیش‌فرض برای فیلدهای Auto
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
@@ -82,9 +82,9 @@ USE_I18N = True
 USE_TZ = True
 
 # تنظیمات لاگین
-LOGIN_URL = 'accounts/login/'
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = "accounts/login/"
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
 
 # تنظیمات MIME برای جاوااسکریپت
 mimetypes.add_type("application/javascript", ".js", True)

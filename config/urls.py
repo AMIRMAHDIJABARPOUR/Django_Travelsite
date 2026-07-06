@@ -7,7 +7,7 @@ from debug_toolbar.toolbar import debug_toolbar_urls
 
 ##############################directly_import###################################
 from .sitemaps import StaticViewSitemap
-from Django_Travelsite import settings
+from django.conf import settings
 from blog_page.sitemaps import PostSitemap, CategorySitemap
 from . import views
 from blog_page.feeds import LatestPostsFeed
