@@ -46,23 +46,17 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-    # -------------------------------
-    # ✅ نرمال‌سازی و تمیز کردن تگ‌ها
-    # -------------------------------
+
     def clean_tags(self):
-        """هر تگی با فاصله یا حروف عجیب → تبدیل به slug و merge تکراری‌ها"""
         current_tags = list(self.tags.names())
-        self.tags.clear()  # همه‌ی تگ‌های قدیمی رو حذف می‌کنیم
+        self.tags.clear() 
         for name in current_tags:
             clean = slugify(name.strip())
             if clean:
                 self.tags.add(clean)
 
-    # -------------------------------
-    # ✅ متد save ضد‌خرابی و امن
-    # -------------------------------
+
     def save(self, *args, **kwargs):
-        # ساخت slug از title (یکتا و تمیز)
         if not self.slug:
             base_slug = slugify(self.title)
             slug = base_slug
@@ -72,9 +66,7 @@ class Post(models.Model):
                 counter += 1
             self.slug = slug
 
-        super().save(*args, **kwargs)
 
-        # بعد از ذخیره، تگ‌ها رو نرمال کن
         self.clean_tags()
 
     def get_absolute_url(self):
