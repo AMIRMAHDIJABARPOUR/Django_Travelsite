@@ -1,8 +1,31 @@
-db.sqlite3
-# .gitignore
+# Virtual Environment
+.venv/
 venv/
-*.pyc
-__pycache__/
+env/
+
+# Environment Variables
 .env
-#static/
-#media/
+.env.*
+
+# Database
+db.sqlite3
+db.sqlite3-journal
+
+# Django
+media/
+staticfiles/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# IDE
+.idea/
+.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

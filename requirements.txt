@@ -1,7 +1,7 @@
-django>5.2,<5.3
-pillow
-django_extensions
-werkzeug
+Django>=5.2,<5.3
+Pillow
+django-extensions
+Werkzeug
 django-robots
 django-debug-toolbar
 django-taggit

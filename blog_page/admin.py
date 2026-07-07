@@ -6,7 +6,7 @@ from blog_page.models import Category, Post, Comment
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     list_display = ("title", "author", "created_date", "updated_date", "status")
-    list_filter = ("status", "created_date", "category")
+    list_filter = ("status", "created_date", "category", "tags")
     fields = (
         "author",
         "image",
@@ -14,6 +14,7 @@ class PostAdmin(admin.ModelAdmin):
         "status",
         "content",
         "category",
+        "tags",
         "published_date",
     )
     date_hierarchy = "created_date"
