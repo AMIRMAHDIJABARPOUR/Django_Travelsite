@@ -1,1 +1,0 @@
-web: gunicorn Django_Travelsite.wsgi:application --bind 0.0.0.0:$PORT
