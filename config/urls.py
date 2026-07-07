@@ -16,7 +16,7 @@ from blog_page.feeds import LatestPostsFeed
 sitemaps = {
     "static": StaticViewSitemap,
     "post": PostSitemap,
-    "categoty": CategorySitemap,
+    "category": CategorySitemap,
 }
 
 
